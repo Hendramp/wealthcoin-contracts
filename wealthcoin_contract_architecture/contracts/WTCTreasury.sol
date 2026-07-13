@@ -3,11 +3,7 @@ pragma solidity ^0.8.24;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-/**
- * Basic treasury receiver.
- * For production, consider a Safe multisig instead of this simple contract.
- */
-contract WealthCoinTreasury is Ownable {
+contract WTCTreasury is Ownable {
     event Received(address indexed sender, uint256 amount);
     event Withdrawn(address indexed recipient, uint256 amount);
 
@@ -17,7 +13,7 @@ contract WealthCoinTreasury is Ownable {
         emit Received(msg.sender, msg.value);
     }
 
-    function withdraw(address payable recipient, uint256 amount) external onlyOwner {
+    function withdrawPOL(address payable recipient, uint256 amount) external onlyOwner {
         require(recipient != address(0), "Invalid recipient");
         require(address(this).balance >= amount, "Insufficient balance");
 
@@ -25,5 +21,9 @@ contract WealthCoinTreasury is Ownable {
         require(sent, "Withdraw failed");
 
         emit Withdrawn(recipient, amount);
+    }
+
+    function treasuryBalance() external view returns (uint256) {
+        return address(this).balance;
     }
 }

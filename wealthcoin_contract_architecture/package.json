@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "compile": "hardhat compile",
-    "test": "hardhat test",
-    "deploy:amoy": "hardhat run scripts/deploy.js --network polygonAmoy",
-    "deploy:polygon": "hardhat run scripts/deploy.js --network polygon",
-    "fund-presale:polygon": "hardhat run scripts/fundPresale.js --network polygon"
-  },
+  "compile": "hardhat compile --config hardhat.config.cjs",
+  "test": "hardhat test --config hardhat.config.cjs",
+  "deploy:hardhat": "hardhat run scripts/deploy.js --network hardhat --config hardhat.config.cjs",
+  "deploy:amoy": "hardhat run scripts/deploy.js --network polygonAmoy --config hardhat.config.cjs",
+  "deploy:polygon": "hardhat run scripts/deploy.js --network polygon --config hardhat.config.cjs",
+  "fund-presale:polygon": "hardhat run scripts/fundPresale.js --network polygon --config hardhat.config.cjs",
+  "deploy:genesis:amoy": "hardhat run scripts/deployGenesisAmoy.js --network polygonAmoy --config hardhat.config.cjs"
+},
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "hardhat": "^2.22.0"
