@@ -23,10 +23,13 @@ module.exports = {
       accounts: privateKey ? [privateKey] : []
     }
   },
-  etherscan: {
-    apiKey: {
-      polygon: process.env.POLYGONSCAN_API_KEY || "",
-      polygonAmoy: process.env.POLYGONSCAN_API_KEY || ""
-    }
+ etherscan: {
+  apiKey: {
+    polygon: process.env.POLYGONSCAN_API_KEY || "",
+    polygonAmoy: process.env.POLYGONSCAN_API_KEY || ""
   }
+},
+sourcify: {
+  enabled: false
+}
 };
