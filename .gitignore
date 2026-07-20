@@ -1,0 +1,40 @@
+node_modules
+.env
+.env.local
+.env.*.local
+cache
+artifacts
+typechain-types
+coverage
+coverage.json
+.DS_Store
+npm-debug.log
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Dependencies
+node_modules/
+
+# Hardhat generated files
+artifacts/
+cache/
+typechain/
+typechain-types/
+
+# Coverage and logs
+coverage/
+coverage.json
+*.log
+
+# Local editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+_legacy_archive_*/
